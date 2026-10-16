@@ -17,6 +17,9 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+dependencies = [
+    "pygame>=2.6.1",
+]
 
 [project.urls]
 Homepage = "https://saralsb.github.io/boids/"
