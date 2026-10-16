@@ -117,7 +117,7 @@ def update_boid(boid: Boid, boids: list[Boid]) -> None:
     boid.y = (boid.y + boid.vy) % SCREEN_HEIGHT
 
 
-def draw_boid(screen, boid: Boid) -> None:
+def draw_boid(screen: pygame.surface.Surface, boid: Boid) -> None:
     angle = math.atan2(boid.vy, boid.vx)
 
     local_point = [
@@ -136,7 +136,7 @@ def draw_boid(screen, boid: Boid) -> None:
     pygame.draw.polygon(screen, BOID_COLOR, points)
 
 
-def main():
+def main() -> None:
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
