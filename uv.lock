@@ -72,8 +72,8 @@ wheels = [
 ]
 
 [[package]]
-name = "boids"
-version = "0.0.1"
+name = "boids-sara-whiterat"
+version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "pygame" },
