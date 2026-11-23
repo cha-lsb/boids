@@ -4,20 +4,20 @@ from dataclasses import dataclass
 
 import pygame
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-BACKGROUND_COLOR = (20, 20, 45)
-BOID_COLOR = (255, 100, 100)
-BOID_SPEED = 2
-BOID_SIZE = 10.0
-BOID_COUNT = 200
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 700
+BACKGROUND_COLOR = (12, 16, 36)
+BOID_COLOR = (235, 220, 190)
+BOID_SPEED = 2.5
+BOID_SIZE = 6.0
+BOID_COUNT = 250
 RADIUS = 50
-PERCEPTION_RADIUS = 50
-SEPARATION_RADIUS = 30
-SEPARATION_WEIGHT = 1.5
-ALIGNMENT_WEIGHT = 1.0
-COHESION_WEIGHT = 1.0
-MAX_SPEED = 4.0
+PERCEPTION_RADIUS = 40
+SEPARATION_RADIUS = 20
+SEPARATION_WEIGHT = 1
+ALIGNMENT_WEIGHT = 0.04
+COHESION_WEIGHT = 0.02
+MAX_SPEED = 3.0
 
 
 @dataclass
@@ -61,9 +61,9 @@ def separation(boid: Boid, neighbors: list[Boid]) -> tuple:
             steer_x += (boid.x - other.x) / (d * d)
             steer_y += (boid.y - other.y) / (d * d)
             count += 1
-        if count > 0:
-            steer_x /= count
-            steer_y /= count
+    if count > 0:
+        steer_x /= count
+        steer_y /= count
 
     return steer_x, steer_y
 
